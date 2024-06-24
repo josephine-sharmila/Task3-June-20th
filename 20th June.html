@@ -1,1 +1,17 @@
-hi gj
+var jsonstring1 = '{"name";"person 1", "age":5}';
+var jsonstring2 = '{"age":5,"name":"person 1"}';
+
+var obj1 = JSON.parse(jsonstring1);
+var obj2 = JSON.parse(jsonstring2);
+
+function objectsEqual(obj1,obj2) {
+    var jsonstr1 = JSON.stringfy(obj1, Object.keys(obj1).sort());
+    var jsonstr2 = JSON.stringfy(obj2, Object.keys(obj2).sort());
+
+    return jsonstr === jsonstr2;
+}
+if (objectsEqual(obj1,obj2)){
+    console.log("the properties are equal.");
+}else {
+    console.log("the properties are not equal.");
+}
